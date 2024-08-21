@@ -1,38 +1,62 @@
-.App {
-  text-align: center;
+*{
+  box-sizing: border-box;
+}
+body{
+  background-color: #f4f6f8;
+  margin: 0;
+  padding: 10px;
+}
+.imageContainer form{
+  width: 400px;
+  height: 300px;
+ border: 2px solid plum;
+  margin:auto;
+  border-radius: 5px;
+  padding: 5px;
+  background-color: rgb(238, 221, 238);
+  box-shadow: 10px 10px 20px rgb(0, 0, 0, 0.5);
+}
+.imageContainer form:hover{
+  width: 400px;
+  height: 300px;
+ border: 2px solid plum;
+  margin:auto;
+  border-radius: 5px;
+  padding: 5px;
+  background-color: rgb(238, 221, 238);
+  box-shadow: 20px 20px 20px rgba(210, 202, 214, 0.5);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.uploadBox{
+  width: 100%;
+  height: 100%;
+  display:flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  cursor: pointer;
+  font-size: 40px;
+}
+input[type="File"]{
+  display: none;
+}
+.btn{
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+form button{
+  width: 100%;
+  margin: auto;
+  height: 30px;
+  border: none;
+  background-color: orange;
+  border-radius: 5px;
+  font-size: 19px;
+  font-weight: 400;
+  
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.uploadBox img{
+  height: 100%;
 }

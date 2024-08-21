@@ -1,24 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
+import { IoMdCloudUpload } from "react-icons/io";
+import "./App.css";
+import { useState } from "react";
 
 function App() {
+  const [displayImage, setDisplayImage] = useState("");
+  const imageBase64 = (file) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    const data = new Promise((resolve, reject) => {
+      reader.onload = () => resolve(reader.result);
+      reader.onerror = (err) => reject(err);
+    });
+
+    return data;
+  };
+  const handleUploadImage = async (e) => {
+    const fileData = e.target.files[0];
+    const image = await imageBase64(fileData);
+    // console.log(image)
+    setDisplayImage(image);
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className="imageContainer">
+        <form>
+          <label htmlFor="uploadImage">
+            <div className="uploadBox">
+            <input
+                type="file"
+                id="uploadImage"
+                onChange={handleUploadImage}
+              />
+              {displayImage ? <img src={displayImage} alt="Images" /> : <IoMdCloudUpload />}
+
+             
+            </div>
+          </label>
+          <div className="btn">
+            <button>UPLOAD</button>
+          </div>{" "}
+        </form>
+      </div>
+    </>
   );
 }
 
