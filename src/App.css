@@ -55,8 +55,22 @@ form button{
   border-radius: 5px;
   font-size: 19px;
   font-weight: 400;
+  cursor: pointer;
   
 }
 .uploadBox img{
   height: 100%;
+  width: 100%;
+}
+
+.all-image{
+  margin-top: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.all-image  img{
+border-radius: 10px;
+border: 2px solid plum;
+box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
 }
